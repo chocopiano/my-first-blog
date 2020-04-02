@@ -1,0 +1,30 @@
+<html>
+    <body>
+        {% include "barra.html"%}
+        <h1 style="color: red">Hola mundo wene</h1>
+        {% if nombre_persona.nombre == 'Felipe' %}
+        <p>El curso lo imparte el profesor titular</p>
+        {% else %}
+        <p>El curso lo imparte otro profe</p>
+        {% endif %}
+        {#ignora esta parte#}
+    <p>El nombre del profesor es: {{nombre_persona.nombre|upper}} {{nombre_persona.apellido}}</p>
+    <p>La hora es {{momento_actual.month}}</p>
+    <p><strong>Temas del curso:</strong></p>
+    <p>
+        <ul>
+        {% if temas %}
+            {% for eltema in temas %}
+
+                <li>{{eltema|first|upper}}</li>
+
+
+
+            {% endfor %}
+        {% else %}
+            <p>No hay elementos que mostrar</p>
+        {% endif %}
+        </ul>
+    </p>
+    </body>
+</html>
